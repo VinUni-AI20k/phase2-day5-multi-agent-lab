@@ -1,0 +1,21 @@
+{
+  "ran_at": "2026-05-06T15:10:42",
+  "query": "Research GraphRAG state-of-the-art and write a 500-word summary",
+  "model": "gpt-4o-mini",
+  "results": [
+    {
+      "run_name": "single-agent",
+      "latency_seconds": 16.087700300000506,
+      "estimated_cost_usd": 0.000417,
+      "quality_score": 7.0,
+      "notes": "routes=[], errors=0"
+    },
+    {
+      "run_name": "multi-agent",
+      "latency_seconds": 33.11671900000147,
+      "estimated_cost_usd": null,
+      "quality_score": 10.0,
+      "notes": "routes=['researcher', 'analyst', 'writer', 'critic', 'done'], errors=0"
+    }
+  ]
+}

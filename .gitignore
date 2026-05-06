@@ -8,6 +8,6 @@ __pycache__/
 dist/
 build/
 *.egg-info/
-reports/*.json
-reports/*.md
 !.gitkeep
+!reports/benchmark_report.md
+!reports/benchmark_summary.json

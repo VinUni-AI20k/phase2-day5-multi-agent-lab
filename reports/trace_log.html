@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Multi-Agent Trace Log — Day 20</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; color: #c9d1d9; font-family: 'Consolas', 'Monaco', monospace; font-size: 13px; padding: 24px; }
+  h1 { color: #58a6ff; font-size: 18px; margin-bottom: 4px; font-family: sans-serif; }
+  .meta { color: #8b949e; font-size: 12px; margin-bottom: 20px; font-family: sans-serif; }
+  .section { margin-bottom: 24px; }
+  .section-title { color: #f0f6fc; font-size: 13px; font-weight: bold; font-family: sans-serif;
+    border-bottom: 1px solid #30363d; padding-bottom: 6px; margin-bottom: 12px; }
+  .log-block { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 14px; }
+  .log-line { line-height: 1.8; white-space: pre; }
+  .ts { color: #6e7681; }
+  .lvl-INFO  { color: #3fb950; font-weight: bold; }
+  .lvl-WARNING { color: #d29922; font-weight: bold; }
+  .lvl-ERROR { color: #f85149; font-weight: bold; }
+  .mod { color: #79c0ff; }
+  .msg { color: #c9d1d9; }
+  .highlight { background: #1f2d1f; border-left: 3px solid #3fb950; padding-left: 8px; }
+  .arrow { color: #f78166; font-weight: bold; }
+  .pipeline { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .node { background: #21262d; border: 1px solid #30363d; border-radius: 20px;
+    padding: 6px 14px; font-size: 12px; font-family: sans-serif; }
+  .node.supervisor { border-color: #58a6ff; color: #58a6ff; }
+  .node.researcher { border-color: #3fb950; color: #3fb950; }
+  .node.analyst    { border-color: #d2a8ff; color: #d2a8ff; }
+  .node.writer     { border-color: #ffa657; color: #ffa657; }
+  .node.critic     { border-color: #f85149; color: #f85149; }
+  .node.done       { border-color: #8b949e; color: #8b949e; }
+  .arr { color: #6e7681; font-size: 16px; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+  .metric { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 12px; }
+  .metric-label { color: #8b949e; font-size: 11px; font-family: sans-serif; margin-bottom: 4px; }
+  .metric-value { color: #f0f6fc; font-size: 18px; font-weight: bold; font-family: sans-serif; }
+  .metric-value.green { color: #3fb950; }
+  .metric-value.blue  { color: #58a6ff; }
+  .metric-value.orange{ color: #ffa657; }
+</style>
+</head>
+<body>
+
+<h1>Multi-Agent Research System — Trace Log</h1>
+<div class="meta">Author: Trịnh Kế Tiến — 2A202600500 &nbsp;|&nbsp; Date: 2026-05-06 &nbsp;|&nbsp; Lab: Day 20 &nbsp;|&nbsp; Model: gpt-4o-mini</div>
+
+<div class="section">
+  <div class="section-title">Agent Pipeline</div>
+  <div class="pipeline">
+    <span class="node supervisor">Supervisor</span>
+    <span class="arr">→</span>
+    <span class="node researcher">Researcher</span>
+    <span class="arr">→</span>
+    <span class="node supervisor">Supervisor</span>
+    <span class="arr">→</span>
+    <span class="node analyst">Analyst</span>
+    <span class="arr">→</span>
+    <span class="node supervisor">Supervisor</span>
+    <span class="arr">→</span>
+    <span class="node writer">Writer</span>
+    <span class="arr">→</span>
+    <span class="node supervisor">Supervisor</span>
+    <span class="arr">→</span>
+    <span class="node critic">Critic</span>
+    <span class="arr">→</span>
+    <span class="node supervisor">Supervisor</span>
+    <span class="arr">→</span>
+    <span class="node done">done</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Benchmark Metrics</div>
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-label">Single-Agent Latency</div>
+      <div class="metric-value blue">16.09s</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Multi-Agent Latency</div>
+      <div class="metric-value orange">33.12s</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Quality Score</div>
+      <div class="metric-value green">10.0 / 10</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Citation Coverage</div>
+      <div class="metric-value green">100%</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Run Log — reports/run.log</div>
+  <div class="log-block">
+<div class="log-line"><span class="ts">2026-05-06 15:10:09,264</span> <span class="lvl-INFO">INFO</span>  <span class="mod">evaluation.benchmark</span>  <span class="msg">- Benchmarking [multi-agent] query='Research GraphRAG state-of-the-art and write a 500-word summary'</span></div>
+<div class="log-line"><span class="ts">2026-05-06 15:10:09,802</span> <span class="lvl-INFO">INFO</span>  <span class="mod">graph.workflow     </span>  <span class="msg">- Starting multi-agent workflow for query: Research GraphRAG state-of-the-art and write a 500-word summary</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:09,802</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.supervisor  </span>  <span class="msg">- Supervisor <span class="arrow">→ researcher</span> (iteration 0)</span></div>
+<div class="log-line"><span class="ts">2026-05-06 15:10:09,802</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.researcher  </span>  <span class="msg">- Researcher: searching for 'Research GraphRAG state-of-the-art and write a 500-word summary'</span></div>
+<div class="log-line"><span class="ts">2026-05-06 15:10:09,802</span> <span class="lvl-INFO">INFO</span>  <span class="mod">services.search    </span>  <span class="msg">- No TAVILY_API_KEY — using mock search</span></div>
+<div class="log-line"><span class="ts">2026-05-06 15:10:22,818</span> <span class="lvl-INFO">INFO</span>  <span class="mod">httpx              </span>  <span class="msg">- HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:22,818</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.researcher  </span>  <span class="msg">- Researcher: done. 5 sources, 2997 chars of notes.</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:22,818</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.supervisor  </span>  <span class="msg">- Supervisor <span class="arrow">→ analyst</span> (iteration 1)</span></div>
+<div class="log-line"><span class="ts">2026-05-06 15:10:31,076</span> <span class="lvl-INFO">INFO</span>  <span class="mod">httpx              </span>  <span class="msg">- HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:31,081</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.analyst     </span>  <span class="msg">- Analyst: done. 3745 chars of analysis.</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:31,081</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.supervisor  </span>  <span class="msg">- Supervisor <span class="arrow">→ writer</span> (iteration 2)</span></div>
+<div class="log-line"><span class="ts">2026-05-06 15:10:42,376</span> <span class="lvl-INFO">INFO</span>  <span class="mod">httpx              </span>  <span class="msg">- HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:42,379</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.writer      </span>  <span class="msg">- Writer: done. 4360 chars in final answer.</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:42,379</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.supervisor  </span>  <span class="msg">- Supervisor <span class="arrow">→ critic</span> (iteration 3)</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:42,379</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.critic      </span>  <span class="msg">- Critic: 11 total citations, 5 unique, 0 invalid, coverage 100%</span></div>
+<div class="log-line highlight"><span class="ts">2026-05-06 15:10:42,379</span> <span class="lvl-INFO">INFO</span>  <span class="mod">agents.supervisor  </span>  <span class="msg">- Supervisor <span class="arrow">→ done</span> (iteration 4)</span></div>
+<div class="log-line"><span class="ts">2026-05-06 15:10:42,379</span> <span class="lvl-INFO">INFO</span>  <span class="mod">evaluation.benchmark</span> <span class="msg">- [multi-agent] latency=33.12s  cost=$0.00158  quality=10.0</span></div>
+  </div>
+</div>
+
+</body>
+</html>

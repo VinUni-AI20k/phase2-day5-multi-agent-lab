@@ -1,0 +1,38 @@
+2026-05-06 15:08:32,843 INFO multi_agent_research_lab.evaluation.benchmark - Benchmarking [single-agent] query='Research GraphRAG state-of-the-art and write a 500-word summary'
+2026-05-06 15:08:50,694 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:08:50,705 INFO multi_agent_research_lab.evaluation.benchmark - [single-agent] latency=17.87s cost=$0.00044 quality=7.0
+2026-05-06 15:08:50,714 INFO multi_agent_research_lab.evaluation.benchmark - Benchmarking [multi-agent] query='Research GraphRAG state-of-the-art and write a 500-word summary'
+2026-05-06 15:08:51,296 INFO multi_agent_research_lab.graph.workflow - Starting multi-agent workflow for query: Research GraphRAG state-of-the-art and write a 500-word summary
+2026-05-06 15:08:51,311 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> researcher (iteration 0)
+2026-05-06 15:08:51,313 INFO multi_agent_research_lab.agents.researcher - Researcher: searching for 'Research GraphRAG state-of-the-art and write a 500-word summary'
+2026-05-06 15:08:51,313 INFO multi_agent_research_lab.services.search_client - No TAVILY_API_KEY — using mock search for: Research GraphRAG state-of-the-art and write a 500-word summary
+2026-05-06 15:09:00,696 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:09:00,699 INFO multi_agent_research_lab.agents.researcher - Researcher: done. 5 sources, 2843 chars of notes.
+2026-05-06 15:09:00,702 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> analyst (iteration 1)
+2026-05-06 15:09:10,107 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:09:10,107 INFO multi_agent_research_lab.agents.analyst - Analyst: done. 3690 chars of analysis.
+2026-05-06 15:09:10,107 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> writer (iteration 2)
+2026-05-06 15:09:24,557 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:09:24,557 INFO multi_agent_research_lab.agents.writer - Writer: done. 4263 chars in final answer.
+2026-05-06 15:09:24,557 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> critic (iteration 3)
+2026-05-06 15:09:24,557 ERROR multi_agent_research_lab.evaluation.benchmark - Runner [multi-agent] failed: 'critic'
+2026-05-06 15:09:53,165 INFO multi_agent_research_lab.evaluation.benchmark - Benchmarking [single-agent] query='Research GraphRAG state-of-the-art and write a 500-word summary'
+2026-05-06 15:10:09,246 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:10:09,261 INFO multi_agent_research_lab.evaluation.benchmark - [single-agent] latency=16.09s cost=$0.00042 quality=7.0
+2026-05-06 15:10:09,264 INFO multi_agent_research_lab.evaluation.benchmark - Benchmarking [multi-agent] query='Research GraphRAG state-of-the-art and write a 500-word summary'
+2026-05-06 15:10:09,802 INFO multi_agent_research_lab.graph.workflow - Starting multi-agent workflow for query: Research GraphRAG state-of-the-art and write a 500-word summary
+2026-05-06 15:10:09,802 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> researcher (iteration 0)
+2026-05-06 15:10:09,802 INFO multi_agent_research_lab.agents.researcher - Researcher: searching for 'Research GraphRAG state-of-the-art and write a 500-word summary'
+2026-05-06 15:10:09,802 INFO multi_agent_research_lab.services.search_client - No TAVILY_API_KEY — using mock search for: Research GraphRAG state-of-the-art and write a 500-word summary
+2026-05-06 15:10:22,818 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:10:22,818 INFO multi_agent_research_lab.agents.researcher - Researcher: done. 5 sources, 2997 chars of notes.
+2026-05-06 15:10:22,818 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> analyst (iteration 1)
+2026-05-06 15:10:31,076 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:10:31,081 INFO multi_agent_research_lab.agents.analyst - Analyst: done. 3745 chars of analysis.
+2026-05-06 15:10:31,081 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> writer (iteration 2)
+2026-05-06 15:10:42,376 INFO httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-06 15:10:42,379 INFO multi_agent_research_lab.agents.writer - Writer: done. 4360 chars in final answer.
+2026-05-06 15:10:42,379 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> critic (iteration 3)
+2026-05-06 15:10:42,379 INFO multi_agent_research_lab.agents.critic - Critic: 11 total citations, 5 unique, 0 invalid, coverage 100%
+2026-05-06 15:10:42,379 INFO multi_agent_research_lab.agents.supervisor - Supervisor -> done (iteration 4)
+2026-05-06 15:10:42,379 INFO multi_agent_research_lab.evaluation.benchmark - [multi-agent] latency=33.12s cost=$0.00000 quality=10.0

@@ -1,0 +1,75 @@
+{
+  "query": "Research GraphRAG state-of-the-art and write a 300-word summary",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "iterations": 5,
+  "trace": [
+    {
+      "name": "supervisor",
+      "payload": {
+        "next": "researcher",
+        "iteration": 1
+      }
+    },
+    {
+      "name": "researcher",
+      "payload": {
+        "n_sources": 5,
+        "cost_usd": 0.00030194999999999994
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "next": "analyst",
+        "iteration": 2
+      }
+    },
+    {
+      "name": "analyst",
+      "payload": {
+        "cost_usd": 0.00038219999999999997
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "next": "writer",
+        "iteration": 3
+      }
+    },
+    {
+      "name": "writer",
+      "payload": {
+        "cost_usd": 0.00037935
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "next": "critic",
+        "iteration": 4
+      }
+    },
+    {
+      "name": "critic",
+      "payload": {
+        "verdict": "PASS",
+        "cost_usd": 0.00021045
+      }
+    },
+    {
+      "name": "supervisor",
+      "payload": {
+        "next": "done",
+        "iteration": 5
+      }
+    }
+  ],
+  "errors": []
+}
